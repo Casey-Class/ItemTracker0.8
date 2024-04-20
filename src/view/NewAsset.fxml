@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="481.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewAssetController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe7d9" height="482.0" stroke="BLACK" strokeType="INSIDE" width="633.0" />
+      <Label fx:id="categoryDisplayLabel" alignment="CENTER" layoutX="225.0" layoutY="73.0" prefHeight="39.0" prefWidth="184.0" text="Asset Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="saveButton" alignment="CENTER" layoutX="240.0" layoutY="353.0" mnemonicParsing="false" onAction="#addInfo" prefHeight="60.0" prefWidth="133.0" text="Save">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <effect>
+            <DropShadow color="#659ec9" />
+         </effect>
+      </Button>
+      <Button fx:id="homeButton" layoutX="25.0" layoutY="404.0" mnemonicParsing="false" onAction="#goHome" prefHeight="52.0" prefWidth="112.0" text="Back To Home" />
+      <TextField fx:id="assetNameText" layoutX="84.0" layoutY="112.0" prefHeight="27.0" prefWidth="464.0" promptText="Enter asset name here" />
+      <Label fx:id="categoryDisplayLabel1" alignment="CENTER" layoutX="25.0" layoutY="156.0" prefHeight="39.0" prefWidth="184.0" text="Category">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="categoryPicker" layoutX="42.0" layoutY="195.0" prefWidth="150.0" />
+      <Label fx:id="categoryDisplayLabel2" alignment="CENTER" layoutX="214.0" layoutY="156.0" prefHeight="39.0" prefWidth="184.0" text="Location:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="locationPicker" layoutX="225.0" layoutY="195.0" prefWidth="150.0" />
+      <Label fx:id="categoryDisplayLabel3" alignment="CENTER" layoutX="419.0" layoutY="156.0" prefHeight="39.0" prefWidth="184.0" text="Purchase Date:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePicker" layoutX="417.0" layoutY="195.0" />
+      <Label fx:id="categoryDisplayLabel4" alignment="CENTER" layoutX="25.0" layoutY="241.0" prefHeight="39.0" prefWidth="184.0" text="Description">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descriptionBox" layoutX="42.0" layoutY="275.0" prefHeight="43.0" prefWidth="150.0" promptText="type here" />
+      <Label fx:id="categoryDisplayLabel5" alignment="CENTER" layoutX="214.0" layoutY="244.0" prefHeight="39.0" prefWidth="184.0" text="Purchased Value">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="purchaseValue" layoutX="226.0" layoutY="283.0" />
+      <Label fx:id="categoryDisplayLabel6" alignment="CENTER" layoutX="419.0" layoutY="244.0" prefHeight="39.0" prefWidth="184.0" text="Warranty Expiration Date">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="warrantyDate" layoutX="417.0" layoutY="283.0" />
+      <Label fx:id="categoryDisplayLabel7" alignment="CENTER" layoutX="-1.0" prefHeight="60.0" prefWidth="633.0" style="-fx-border-color: black;" text="Define New Asset">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="158.0" layoutY="165.0" text="*" textFill="RED" />
+      <Label layoutX="349.0" layoutY="165.0" text="*" textFill="RED" />
+      <Label layoutX="374.0" layoutY="77.0" prefHeight="17.0" prefWidth="6.0" text="*" textFill="RED" />
+   </children>
+</AnchorPane>
