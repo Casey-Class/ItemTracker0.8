@@ -75,13 +75,13 @@ public class WelcomeController {
     }
     
     /**
-     * The goToCategoryPage method is called when the "enter category" button is clicked.
-     * It navigates to the NewCategory page.
+     * The goToNewAssetPage method is called when the "enter category" button is clicked.
+     * It navigates to the NewAsset page.
      * 
      * @param event The ActionEvent triggered by clicking the button
      */
     @FXML
-    private void goToAssetPage(ActionEvent event) {
+    private void goToNewAssetPage(ActionEvent event) {
     	try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Gets the stage from the event source
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NewAsset.fxml")); // Load the FXML file for Sample page
@@ -89,6 +89,27 @@ public class WelcomeController {
             Scene scene = new Scene(root); // Creates a new scene with the loaded root element
             stage.setScene(scene); // Sets the scene to the stage
             stage.setTitle("Enter New Asset Name"); // Sets the title of the stage
+            stage.show(); // Shows the stage
+        } catch (Exception e) {
+            e.printStackTrace(); // Prints the stack trace if an exception occurs
+        }
+    }
+
+    /**
+     * The goToExistingAssetPage method is called when the "enter category" button is clicked.
+     * It navigates to the ExistingAssets page.
+     *
+     * @param event The ActionEvent triggered by clicking the button
+     */
+    @FXML
+    private void goToExistingAssetPage(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Gets the stage from the event source
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ExistingAssets.fxml")); // Load the FXML file for Sample page
+            Parent root = loader.load(); // Loads the root element of the FXML file
+            Scene scene = new Scene(root); // Creates a new scene with the loaded root element
+            stage.setScene(scene); // Sets the scene to the stage
+            stage.setTitle("ExistingAssets"); // Sets the title of the stage
             stage.show(); // Shows the stage
         } catch (Exception e) {
             e.printStackTrace(); // Prints the stack trace if an exception occurs
