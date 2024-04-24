@@ -96,7 +96,7 @@ public class WelcomeController {
     }
 
     /**
-     * The goToExistingAssetPage method is called when the "enter category" button is clicked.
+     * The goToExistingAssetPage method is called when the "existing assets" button is clicked.
      * It navigates to the ExistingAssets page.
      *
      * @param event The ActionEvent triggered by clicking the button
