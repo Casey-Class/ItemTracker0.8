@@ -28,13 +28,7 @@ public class ExistingAssetController {
     private TableView<Asset> AssetTable;
 
     @FXML
-    private TableColumn<?, ?> ViewItemCol;
-
-    @FXML
     private TextField SearchField;
-
-    @FXML
-    private TableColumn<Asset, String> CategoryCol;
 
     @FXML
     private ScrollPane ScrollPane;
@@ -54,30 +48,25 @@ public class ExistingAssetController {
     @FXML
     private AnchorPane AnchorPane;
 
-    @FXML
-    private TableColumn<Asset, String> AssetNameCol;
-
-    @FXML
-    private TableColumn<Asset, String> LocationCol;
-
-    private List<String> assets = new ArrayList<>(); // Array that stores assets
-    private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
+    //private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
     public void initialize() {
         // Set initial text for category display label
         PageLabel.setText("Asset List");
-        TableColumn assetNameCol = new TableColumn("Asset Name");
-        TableColumn categoryCol = new TableColumn("Category");
-        TableColumn locationCol = new TableColumn("Location");
-        AssetTable.getColumns().addAll(assetNameCol, categoryCol, locationCol);
-        loadAssets(); // load entries from assets.csv into the table
-        assetNameCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("name"));
-        categoryCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("category"));
-        locationCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("location"));
-        AssetTable.setItems(assetObservableList);
-    }
 
-    public void loadAssets() {
+        // make table columns
+        TableColumn<Asset, String> assetNameCol = new TableColumn<>("Asset Name");
+        TableColumn<Asset, String> categoryCol = new TableColumn<>("Category");
+        TableColumn<Asset, String> locationCol = new TableColumn<>("Location");
+        AssetTable.getColumns().addAll(assetNameCol, categoryCol, locationCol);
+
+        // set columns
+        assetNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        locationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+
+        // load data
+        ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
         String filePath = "assets.csv";
 
         if (Files.exists(Paths.get(filePath))) {
@@ -85,7 +74,7 @@ public class ExistingAssetController {
                 List<String> lines = Files.readAllLines(Paths.get(filePath));
 
                 // Clear existing assets List
-                assets.clear();
+                assetObservableList.clear();
 
                 // add each asset to assets
                 for (String line : lines) {
@@ -98,6 +87,9 @@ public class ExistingAssetController {
         } else {
             System.out.println("File does not exist: " + filePath);
         }
+
+        // populate table
+        AssetTable.setItems(assetObservableList);
     }
 
 
