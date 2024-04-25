@@ -109,7 +109,7 @@ public class WelcomeController {
             Parent root = loader.load(); // Loads the root element of the FXML file
             Scene scene = new Scene(root); // Creates a new scene with the loaded root element
             stage.setScene(scene); // Sets the scene to the stage
-            stage.setTitle("ExistingAssets"); // Sets the title of the stage
+            stage.setTitle("Existing Assets"); // Sets the title of the stage
             stage.show(); // Shows the stage
         } catch (Exception e) {
             e.printStackTrace(); // Prints the stack trace if an exception occurs
