@@ -25,7 +25,7 @@ import java.util.List;
 public class ExistingAssetController {
 
     @FXML
-    private TableView<?> AssetTable;
+    private TableView<Asset> AssetTable;
 
     @FXML
     private TableColumn<?, ?> ViewItemCol;
@@ -34,7 +34,7 @@ public class ExistingAssetController {
     private TextField SearchField;
 
     @FXML
-    private TableColumn<?, ?> CategoryCol;
+    private TableColumn<Asset, String> CategoryCol;
 
     @FXML
     private ScrollPane ScrollPane;
@@ -55,10 +55,10 @@ public class ExistingAssetController {
     private AnchorPane AnchorPane;
 
     @FXML
-    private TableColumn<?, ?> AssetNameCol;
+    private TableColumn<Asset, String> AssetNameCol;
 
     @FXML
-    private TableColumn<?, ?> LocationCol;
+    private TableColumn<Asset, String> LocationCol;
 
     private List<String> assets = new ArrayList<>(); // Array that stores assets
     private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
@@ -66,11 +66,15 @@ public class ExistingAssetController {
     public void initialize() {
         // Set initial text for category display label
         PageLabel.setText("Asset List");
-        AssetNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        CategoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
-        LocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
-        ViewItemCol.setCellValueFactory(new PropertyValueFactory<>("viewItem"));
+        TableColumn assetNameCol = new TableColumn("Asset Name");
+        TableColumn categoryCol = new TableColumn("Category");
+        TableColumn locationCol = new TableColumn("Location");
+        AssetTable.getColumns().addAll(assetNameCol, categoryCol, locationCol);
         loadAssets(); // load entries from assets.csv into the table
+        assetNameCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("name"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("category"));
+        locationCol.setCellValueFactory(new PropertyValueFactory<Asset, String>("location"));
+        AssetTable.setItems(assetObservableList);
     }
 
     public void loadAssets() {
@@ -95,6 +99,7 @@ public class ExistingAssetController {
             System.out.println("File does not exist: " + filePath);
         }
     }
+
 
     /**
 
