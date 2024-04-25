@@ -60,9 +60,6 @@ public class ExistingAssetController {
     @FXML
     private TableColumn<?, ?> LocationCol;
 
-    //@FXML
-    //void goBack(ActionEvent event) {}
-
     private List<String> assets = new ArrayList<>(); // Array that stores assets
     private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
