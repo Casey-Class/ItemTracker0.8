@@ -60,8 +60,8 @@ public class ExistingAssetController {
     @FXML
     private TableColumn<?, ?> LocationCol;
 
-    @FXML
-    void goBack(ActionEvent event) {}
+    //@FXML
+    //void goBack(ActionEvent event) {}
 
     private List<String> assets = new ArrayList<>(); // Array that stores assets
     private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
@@ -104,7 +104,7 @@ public class ExistingAssetController {
      Handles the action event when the "Back" button is clicked.
      Loads the homepage FXML file and sets it as the scene for the stage.
      */
-    public void goBack() {
+    public void goBack(ActionEvent event) {
         try {// Load the FXML file for the welcome page
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Welcome.fxml"));
             Parent root = loader.load();
