@@ -26,7 +26,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="BackButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#goHome" prefHeight="57.0" prefWidth="92.0" text="Back">
+      <Button fx:id="BackButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#goBack" prefHeight="57.0" prefWidth="92.0" text="Back">
          <font>
             <Font size="14.0" />
          </font>
