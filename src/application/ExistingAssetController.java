@@ -103,7 +103,7 @@ public class ExistingAssetController {
 
     /**
 
-     Handles the action event when the "Back To Home" button is clicked.
+     Handles the action event when the "Back" button is clicked.
      Loads the homepage FXML file and sets it as the scene for the stage.
      */
     public void goHome() {
