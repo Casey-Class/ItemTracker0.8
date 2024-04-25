@@ -105,7 +105,7 @@ public class WelcomeController {
     private void goToExistingAssetPage(ActionEvent event) {
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Gets the stage from the event source
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ExistingAssets.fxml")); // Load the FXML file for Sample page
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ExistingAsset.fxml")); // Load the FXML file for Sample page
             Parent root = loader.load(); // Loads the root element of the FXML file
             Scene scene = new Scene(root); // Creates a new scene with the loaded root element
             stage.setScene(scene); // Sets the scene to the stage

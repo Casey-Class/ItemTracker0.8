@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffe7d9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutX="23.0" layoutY="69.0" prefHeight="311.0" prefWidth="549.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="312.0" prefWidth="554.0" style="-fx-border-color: #000000; -fx-background-color: #ffe7d9;">
+               <children>
+                  <TableView layoutX="1.0" layoutY="1.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                    <columns>
+                      <TableColumn prefWidth="150.0" text="Asset Name" />
+                      <TableColumn minWidth="0.0" prefWidth="106.00001525878906" text="Category" />
+                        <TableColumn minWidth="0.0" prefWidth="106.00001525878906" text="Location" />
+                        <TableColumn minWidth="0.0" prefWidth="106.00001525878906" text="View Item" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="92.0" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField layoutX="406.0" layoutY="10.0" prefHeight="57.0" prefWidth="180.0" />
+      <Button layoutX="494.0" layoutY="10.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="92.0" text="Search">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="211.0" layoutY="19.0" text="Existing Assets" />
+   </children>
+</AnchorPane>
